@@ -42,7 +42,7 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [campeonatoId]);
+  }, [dataTabela, dataRodada, rodada, campeonatoId]);
 
   return (
     <div className="shadow-md pb-10">
@@ -71,7 +71,7 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
           </thead>
           <tbody>
             {dataTabela.map((clube) => (
-              <tr className="focus:bg-red-100">
+              <tr key={clube.time.id} className="focus:bg-red-100">
                 <td
                   className={
                     clube.posicao <= 4
@@ -108,6 +108,7 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
                   {clube.variacao_posicao < 0 ? (
                     <div className="flex">
                       <Image
+                        alt="seta para baixo"
                         className="down"
                         src={setaPos}
                         width={10}
@@ -119,14 +120,24 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
                     </div>
                   ) : clube.variacao_posicao > 0 ? (
                     <div className="flex">
-                      <Image src={setaPos} width={10} height={10} />
+                      <Image
+                        alt="seta para cima"
+                        src={setaPos}
+                        width={10}
+                        height={10}
+                      />
                       <h4 className="variacao_posicao">
                         {clube.variacao_posicao}
                       </h4>
                     </div>
                   ) : (
                     <div className="flex">
-                      <Image src={neutroPos} width={12} height={12} />
+                      <Image
+                        alt="neutro"
+                        src={neutroPos}
+                        width={12}
+                        height={12}
+                      />
                     </div>
                   )}
                 </td>
@@ -185,7 +196,10 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
       </div>
 
       {dataRodada?.partidas?.map((partida) => (
-        <div className="rodada_container flex flex-col items-center justify-center border-b-2 py-7">
+        <div
+          key={partida.partida_id}
+          className="rodada_container flex flex-col items-center justify-center border-b-2 py-7"
+        >
           <div className="flex items-center justify-center mb-4  w-full ">
             <h3 className="font-bold text-slate-700 text-xs">
               {partida.data_realizacao}
@@ -220,7 +234,13 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
               <span className="font-bold  text-xl">
                 {partida.placar_mandante}
               </span>
-              <Image className="x" src={x} width={13} height={13} />
+              <Image
+                alt="imagem de um x"
+                className="x"
+                src={x}
+                width={13}
+                height={13}
+              />
               <span className="font-bold  text-xl">
                 {partida.placar_visitante}
               </span>

@@ -43,7 +43,7 @@ export default function Home({ data }) {
       <div className="clubes m-auto  mt-4">
         <div className=" flex-wrap md:flex-nowrap lg:flex-nowrap flex items-center justify-center">
           {data2.map((clube) => (
-            <div className="clube">
+            <div key={clube.time.time_id} className="clube">
               <Image
                 className="max-h-12  hover:scale-110 duration-500"
                 src={clube.time.escudo}
@@ -58,7 +58,7 @@ export default function Home({ data }) {
       <div className="flex items-center justify-around flex-wrap">
         {data1.map((campeonato) =>
           campeonato.campeonato_id === 2 || campeonato.campeonato_id === 10 ? (
-            <div className="flex ">
+            <div key={campeonato.campeonato_id} className="flex ">
               <div
                 className="lg:mx-32 md:mx-32 sm:mx-5 mx-0 flex text-center items-center flex-col mt-16 hover:scale-110 duration-300"
                 key={campeonato.campeonato_id}
