@@ -29,7 +29,7 @@ export default function Chaves({ campeonatoId, nome, fase, fase_nome }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [dataChaves, fase, campeonatoId]);
+  }, []);
   return (
     <div>
       <h1 className="text-center w-full text-3xl font-semibold mb-16 py-4 border-y-2">
