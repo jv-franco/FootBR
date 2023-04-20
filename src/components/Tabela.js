@@ -42,7 +42,7 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [dataTabela, campeonatoId]);
+  }, []);
 
   return (
     <div className="shadow-md pb-10">
