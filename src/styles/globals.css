@@ -31,7 +31,7 @@
 }
 
 .last {
-  @apply flex text-white mr-1 items-center justify-center uppercase border-gray-500  w-5 rounded-lg p-1 border;
+  @apply flex text-white h-7 mr-1 items-center justify-center uppercase border-gray-500  w-5 rounded-lg  border;
 }
 
 .down {
@@ -47,13 +47,12 @@ thead {
   @apply border-b-4;
 }
 
-td,
 th {
   @apply px-2 py-2;
 }
 
 td {
-  @apply border-b;
+  @apply h-14 border-b;
 }
 
 td > h1 {

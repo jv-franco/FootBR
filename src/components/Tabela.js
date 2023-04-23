@@ -165,7 +165,7 @@ export default function Tabela({ campeonatoId, rodada, rodada_nome, nome }) {
                 <td>
                   <h1>{clube.saldo_gols}</h1>
                 </td>
-                <td className="   w-full">
+                <td className=" flex items-center  w-36">
                   {clube.ultimos_jogos.map((ultimo, indice) => (
                     <div
                       className={
