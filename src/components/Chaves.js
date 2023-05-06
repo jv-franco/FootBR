@@ -53,9 +53,16 @@ export default function Chaves({ campeonatoId, nome, fase, fase_nome }) {
                 <h3 className="font-bold text-slate-700 text-xs">
                   {chave.partida_ida.data_realizacao}
                 </h3>
-                <span className="font-normal mx-1 text-xs">
-                  {chave.partida_ida.estadio.nome_popular}
-                </span>
+                {chave.partida_ida.estadio ? (
+                  <span className="font-normal mx-1 text-xs">
+                    {chave.partida_ida.estadio.nome_popular}
+                  </span>
+                ) : (
+                  <span className="font-normal mx-1 text-xs uppercase">
+                    A Definir
+                  </span>
+                )}
+
                 <h3 className="font-bold text-slate-700 text-xs">
                   {chave.partida_ida.hora_realizacao}
                 </h3>
@@ -123,9 +130,15 @@ export default function Chaves({ campeonatoId, nome, fase, fase_nome }) {
                 <h3 className="font-bold text-slate-700 text-xs">
                   {chave.partida_volta.data_realizacao}
                 </h3>
-                <span className="font-normal mx-1 text-xs">
-                  {chave.partida_volta.estadio.nome_popular}
-                </span>
+                {chave.partida_volta.estadio ? (
+                  <span className="font-normal mx-1 text-xs">
+                    {chave.partida_volta.estadio.nome_popular}
+                  </span>
+                ) : (
+                  <span className="font-normal mx-1 text-xs uppercase">
+                    A Definir
+                  </span>
+                )}
                 <h3 className="font-bold text-slate-700 text-xs">
                   {chave.partida_volta.hora_realizacao}
                 </h3>
